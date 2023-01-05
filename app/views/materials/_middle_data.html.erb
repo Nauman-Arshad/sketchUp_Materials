@@ -1,0 +1,24 @@
+<div class="material-item">
+  <div class="color-conatiner">
+    <% count = 0 %>
+    <% @parsed.each do |h| %>
+      <% count += 1 %>
+      <div class="color-item" onclick="openNav('<%=h['id'] %>','<%= h['name']['en']%>','<%= h['density'] %>','<%= h['thumbnailPath'] %>', '/assets/<%= count % 7 + 1%>.jpg', '<%= h['thickness'] %>')">
+        <img src="/assets/<%= count % 7 + 1 %>.jpg">
+        <h2><%= h['name']['en'] %></h2>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="material-item">
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div id="inner_sidebar" style="padding: 20px;color: black;font-size: larger;font-family: fantasy;">
+      <img id="thumbnail_image" style="width: 200px; height: 180px; display: block; margin: 0 auto;" src=""/>
+      <p id="img_id"></p>
+      <p id="img_name"></p>
+      <p id="density"></p>
+      <p id="clr_id"></p>
+    </div>
+  </div>
+</div>
